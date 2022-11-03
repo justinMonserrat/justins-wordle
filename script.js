@@ -166,7 +166,6 @@ function update() {
 
             let keyTile = document.getElementById("Key" + letter);
             keyTile.classList.remove("present");
-            keyTile.classList.remove("absent");
             keyTile.classList.add("correct");
 
             correct++;
