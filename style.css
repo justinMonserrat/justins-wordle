@@ -3,18 +3,6 @@ body {
     text-align: center;
 }
 
-#title {
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-#answer {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
 #gameboard {
     width: 350px;
     height: 420px;
@@ -96,18 +84,42 @@ body {
 }
 
 @media only screen and (min-width: 320px) {
+    
+    #title {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
     hr {
         width: 380px;
     }
 
-    
+    #answer {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
+    #title {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
     hr {
         width: 500px;
     }
 
+    #answer {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    
     #spacing1 {
         margin-top: 80px;
     }
