@@ -191,13 +191,13 @@ function update() {
                 if (!keyTile.classList.contains("correct")){
                     keyTile.classList.add("present");
                 }
-                else {
-                    keyTile.classList.add("absent");
-                }
                     letterCount[letter] --;
             }
             else {
                 currentTile.classList.add("absent");
+
+                let keyTile = document.getElementById("Key" + letter);
+                keyTile.classList.add("absent");
             }
         }
     }
