@@ -122,7 +122,12 @@ function processInput(e) {
 
     if (!gameOver && row == height) {
         gameOver = true;
+
         document.getElementById("answer").innerText = word;
+
+        setInterval(function() {
+            gameEnd();
+        }, 5000);
     }
 }
 
@@ -174,6 +179,7 @@ function update() {
 
         if (correct == width) {
             gameOver = true;
+            gameEnd();
         }
     }
 
@@ -203,4 +209,8 @@ function update() {
     }
         row++;
         col = 0;
+}
+
+function gameEnd() {
+    document.getElementById("answer").innerText = "Refresh to try again!";
 }
