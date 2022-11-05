@@ -3,10 +3,6 @@ body {
     text-align: center;
 }
 
-hr {
-    width: 500px;
-}
-
 #title {
     font-size: 36px;
     font-weight: bold;
@@ -92,3 +88,16 @@ hr {
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (min-width: 320px) {
+    hr {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    hr {
+        width: 500px;
+    }
+}
+
