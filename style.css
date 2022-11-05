@@ -9,6 +9,12 @@ body {
     letter-spacing: 2px;
 }
 
+#answer {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 #gameboard {
     width: 350px;
     height: 420px;
@@ -93,11 +99,20 @@ body {
     hr {
         width: 400px;
     }
+
+    
 }
 
 @media only screen and (min-width: 1025px) {
     hr {
         width: 500px;
+    }
+
+    #spacing1 {
+        margin-top: 80px;
+    }
+    #spacing2 {
+        margin-top: 100px;
     }
 }
 
