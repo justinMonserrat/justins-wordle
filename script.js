@@ -99,14 +99,14 @@ function processKey() {
 
 function processInput(e) {
     if (gameOver) return;
-
+    
     if ("KeyA" <= e.code && e.code <= "KeyZ") {
         if (col < width) {
             let currentTile = document.getElementById(row.toString() + "-" + col.toString());
             if (currentTile.innerText == "") {
                 currentTile.innerText = e.code[3]
                 col++;
-            }
+            }    
         }
     }
     else if (e.code == "Backspace") {
@@ -167,10 +167,12 @@ function update() {
         let letter = currentTile.innerText;
 
         if (word[c] == letter) {
+            
             currentTile.classList.add("correct");
 
             let keyTile = document.getElementById("Key" + letter);
             keyTile.classList.remove("present");
+            keyTile.classList.remove("absent");
             keyTile.classList.add("correct");
 
             correct++;
@@ -184,17 +186,20 @@ function update() {
     }
 
     //Correct but wrong spot
-    for (let c = 0; c < width; c++) {
+    
+    for (let c = 0; c < width; c++) { 
         let currentTile = document.getElementById(row.toString() + "-" + c.toString());
         let letter = currentTile.innerText;
 
         if (!currentTile.classList.contains("correct")) {
             if (word.includes(letter) && letterCount[letter] > 0) {
+                
                 currentTile.classList.add("present");
 
                 let keyTile = document.getElementById("Key" + letter);
 
                 if (!keyTile.classList.contains("correct")){
+                    keyTile.classList.remove("absent");
                     keyTile.classList.add("present");
                 }
                     letterCount[letter] --;
@@ -203,14 +208,20 @@ function update() {
                 currentTile.classList.add("absent");
 
                 let keyTile = document.getElementById("Key" + letter);
-                keyTile.classList.add("absent");
+
+                if (!keyTile.classList.contains("correct")){
+                    keyTile.classList.add("absent");
+                }
+                
             }
         }
-    }
+    } 
         row++;
         col = 0;
-}
+} 
 
 function gameEnd() {
     document.getElementById("answer").innerText = "Refresh to try again!";
+
+    //going to add end screen popup eventually
 }
